@@ -26,5 +26,4 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 		  .HEX1(HEX1),
 		  .HEX0(HEX0)
     ); 
-	 
 endmodule  // DE1_SoC
