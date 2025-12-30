@@ -24,7 +24,6 @@ module line_drawer_tb();
     //Test sequence
     initial begin
         
-        
         // Test 0: Right-up gradual
         $display("Test 0: Right-up gradual (320,240) to (470,190)");
         reset = 1;
@@ -104,7 +103,6 @@ module line_drawer_tb();
         reset = 0;
         @(posedge done);
         #100;
-        
         
         $stop;
     end
