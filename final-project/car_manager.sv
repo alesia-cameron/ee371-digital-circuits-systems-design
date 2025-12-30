@@ -9,16 +9,12 @@ clk, reset, game_active, rand_val, move_up, move_down, move_forward
 Outputs:
 player_x, player_y, ai1_x, ai1_y, ai2_x, ai2_y, ai3_x, ai3_y
 
-Description:
-Manages positions of four racing cars, tracks player car position based on 
+Description: Manages positions of four racing cars, tracks player car position based on 
 SW inputs and updates 3 AI opponent positions using random # generator. 
 Player moves faster than AI cars. When new round starts, all cars 
 reset to starting line on left of screen. Rate limiting prevents cars 
 from moving too fast by only updating positions every few milliseconds. 
-AI cars use random values to decide when to move forward/change lanes  
-
-
-*/
+AI cars use random values to decide when to move forward/change lanes  */
 
 module car_manager (
     input logic clk,                   
@@ -63,8 +59,7 @@ module car_manager (
     logic move_forward_prev, move_up_prev, move_down_prev;
     logic move_forward_edge, move_up_edge, move_down_edge;
     
-    
-	 //remembers if game active last cycle to detect transition from inactive to active, new round starting
+	//remembers if game active last cycle to detect transition from inactive to active, new round starting
     logic game_active_prev;
     
     //rate limit prevent cars from moving too fast
@@ -196,4 +191,5 @@ module car_manager (
             end
         end
     end
+
 endmodule 
