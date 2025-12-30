@@ -40,7 +40,3 @@ writedata_right, readdata_left, readdata_right, read, write);
 	assign read = read_ready & write_ready;	//the data is only valid when the read_ready signal is asserted
 	assign write = write_ready & read_ready; 
 endmodule
-
-
-
-
