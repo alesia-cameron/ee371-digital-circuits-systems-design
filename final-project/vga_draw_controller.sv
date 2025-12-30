@@ -16,11 +16,9 @@ Description: Module renders the game graphics in real-time by calculating the RG
 color for each pixel as the VGA scans the screen. Draws three different
 screens: title, gameplay with road/cars/traffic light, and game over
 with winner. Uses sprite ROMs for car and traffic light shapes, character
-ROM for text. No framebuffer - generates all pixels every frame using purely combinational logic.
+ROM for text. No framebuffer - generates all pixels every frame using purely combinational logic. */
 
-*/
 module vga_draw_controller (
-
     input logic clk,
     input logic reset,
     //stuff from game telling us what to draw
@@ -133,7 +131,6 @@ module vga_draw_controller (
         g_next = 8'h00;
         b_next = 8'h00;
     
-	 
         //initialize all our working variables
         char_code = 8'd32; //space character by default
         char_row = 3'd0;
