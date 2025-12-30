@@ -17,8 +17,7 @@ DataOut [2:0] 3-bit data output
 module lab2toplevel_Part2(
     input logic [8:0] SW,        
     input [3:0] KEY, 
-	 output logic [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0
- 
+	output logic [6:0] HEX5, HEX4, HEX3, HEX2, HEX1, HEX0
 );
 
 	 //internal signals
@@ -27,7 +26,7 @@ module lab2toplevel_Part2(
     logic Write;
     logic [2:0] DataOut;
 	 
-	 assign HEX2 = 7'b1111111; // off
+	assign HEX2 = 7'b1111111; // off
     assign HEX3 = 7'b1111111; // off
 
     //Switch and key inputs
@@ -35,7 +34,7 @@ module lab2toplevel_Part2(
     assign DataIn = SW[3:1];    
     assign Write = SW[0];    
 	 
-	 //Instantiation task2 multi-dim array
+	//Instantiation task2 multi-dim array
     task2 task2_instantiation (
         .Address(Address),
         .CLK(KEY[0]),
@@ -50,8 +49,7 @@ module lab2toplevel_Part2(
 	5bit number can be displayed as two hex digits, high digit upper bit
 	Address vals 0 to 31 only MSB contributes to the first hex digit
 	so upper 1 or 2 bits goes to HEX5
-	the low digit will be the lower 4 bits so address[3:0] goes to HEX4
-	*/
+	the low digit will be the lower 4 bits so address[3:0] goes to HEX4 */
 	seg7 seg7HEX5 (.hex({3'b000, Address[4]}), .leds(HEX5)); // high digit 0 or 1 and pads w zero's bc address is not [7:0]
 	seg7 seg7HEX4 (.hex(Address[3:0]), .leds(HEX4));
 	seg7 seg7HEX1 (.hex(DataIn), .leds(HEX1));
@@ -63,3 +61,4 @@ HEX5 HEX4 Address
 HEX1 DataIn
 HEX0 DataOut
 */ 
+
