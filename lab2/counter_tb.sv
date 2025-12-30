@@ -37,7 +37,6 @@ module counter_tb;
     initial CLOCK_50 = 0;
     always #10 CLOCK_50 = ~CLOCK_50;  
 
-
     initial begin
     Reset = 1;
     @(posedge CLOCK_50);
@@ -55,13 +54,12 @@ end
 endmodule
 
 
-
 module counterTest(
     input logic CLOCK_50,
     input logic Reset,
     output logic [4:0] Counter
 );
- 
+    
     logic [25:0] secondCount;
     parameter ONE_SECOND = 26'd100;  
     
@@ -80,3 +78,4 @@ module counterTest(
     end
 
 endmodule
+
