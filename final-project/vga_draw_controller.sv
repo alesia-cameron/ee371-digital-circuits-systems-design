@@ -3,8 +3,7 @@ EE/CSE 371
 Dec 5, 2025
 Lab 6 - Red Light, Green Light  
 
-Inputs: 
-clk, reset, game_active, show_final_scores, show_start_screen, red_light, 
+Inputs:   clk, reset, game_active, show_final_scores, show_start_screen, red_light, 
 green_light, player_lost, player_blink, player_x, player_y, 
 ai1_x, ai1_y, ai2_x, ai2_y, ai3_x, ai3_y,
 [3:0] player_score,
@@ -685,3 +684,4 @@ module vga_draw_controller (
     end
    
 endmodule 
+
