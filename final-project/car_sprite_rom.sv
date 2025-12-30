@@ -6,26 +6,22 @@ Lab 6 - Red Light, Green Light
 Inputs: sprite_x, sprite_y
 Outputs: pixel
 
-Description:
-stores car sprite pattern as hardcoded logic, takes in x and y coordinates 
+Description: stores car sprite pattern as hardcoded logic, takes in x and y coordinates 
 within 30x30 pixel grid, outputs whether specific pixel should be solid or 
 transparent. Defines car shape row by row using comb logic that checks 
 coordinate ranges. Creates car silhouette. Used by graphics controller to 
 draw four racing cars on screen by sampling different positions within 
-sprite pattern 
+sprite pattern  */
 
+/* Car Sprite ROM 30x30 pixel car combinational logic instead of initial blocks for FPGA synthesis */
 
-*/
-
-/* Car Sprite ROM 30x30 pixel car combinational logic instead of initial blocks for FPGA synthesis
- */
 module car_sprite_rom (
     input logic [4:0] sprite_x, //horizontal pixel position sprite from 0 to 29
     input logic [4:0] sprite_y,  //vertical pixel position sprite from 0 to 29
     output logic pixel //output high for solid pixel, low for transparent
 );
     
-    //calcu pixel val based on coordinates creates car shape by defining which pixels are solid versus transparent
+    //calc pixel val based on coordinates creates car shape by defining which pixels are solid versus transparent
     always_comb 
 	 begin
         pixel = 1'b0; //start with transparent as default for each pixel
