@@ -22,9 +22,8 @@ This implements moving average filter and smoothes fluctuations in input
 while preserving the general trend ofsignal. 
 Module pre-fills accumulator and FIFO until enough samples collected, 
 then continuously updates dataOut with averaged val 
-Reset can accumulator, FIFO, and output to restart
+Reset can accumulator, FIFO, and output to restart. larger n means more smoothing num samples and sample width 
 */
-//larger n means more smoothing num samples and sample width 
 
 module FIR_Filter (
     input clk, //cant use logic bc .v not .sv 
@@ -33,15 +32,14 @@ module FIR_Filter (
     input signed [23:0] dataIn, //raw data input - noisy
     output reg signed [23:0] dataOut //averaged data out - smooth
 );
+	
 ///////////Constants declared/////////////////////////////////
     parameter n = 4;  //divide by 2^n and we want 8
     parameter w = 24; //data width
 	 
-	 
 ///////////Local logic list ///////////////////////////////////
 	 wire signed [23:0] divided; //cant use logic bc v not sv
 	 assign divided = dataIn >>> n;//first divide each noisy input sample by n	 //assign divided = {{n{dataIn[w-1]}}, dataIn[w-1:n]};
-
 	 
 ///////////Fifo signals/////////////////////////////////////////
     wire signed [23:0] out;
@@ -66,14 +64,12 @@ module FIR_Filter (
 				  .w_data(divided),
 				  .r_data(out) //oldest sample to subract when new sample comes in
 			 );
-
-	 
+	
 ///////////Accumulator//////////////////////////////////////////////
     reg signed [23+n:0] accumulator; //running sum should be bigger than 24 bits, creates registers
     reg [4:0] count;//# of samples, < n
     wire prefill;
     assign prefill = (count == (2**n));
-	 
 
 ////////////FSM Logic////////////////////////////////////////////////
     always @(posedge clk) 
@@ -102,8 +98,4 @@ module FIR_Filter (
             dataOut <= accumulator[23+n:n];
         end
     end
-		  
 endmodule
-
-
-
