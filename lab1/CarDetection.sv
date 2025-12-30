@@ -2,7 +2,6 @@
 EE371 - Autumn 2025
 
 Description: this module is a finite state machine that monitors the outer and inner sensors to generate single-cycle incr or decr pulses when a car enters or exits the parking lot.
-
 */
 
 module CarDetection (
