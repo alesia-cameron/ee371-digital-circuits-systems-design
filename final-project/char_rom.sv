@@ -11,8 +11,7 @@ row[2:0]
 Outputs: 
 pixels[7:0] 
 
-Description:
-character ROM converts convenient char_code + row interface to ROM address
+Description: character ROM converts convenient char_code + row interface to ROM address
 Character ROM stores 8x8 pixel bitmap for rendering text. 
 Address port combines 7 least significant bits of incoming character 
 code with 3bit row index forming 10bit address selecting 1 of 1024 bytes 
@@ -23,9 +22,7 @@ pixels. Layout stores characters contiguously: character code selects block,
 row index selects offset inside block. char_rom holds bitmaps, memory stores 
 8 rows per character, each row as 8-bit wide pattern, each bit drives pixel 
 on/pixel off. Module uses synchronous read, address loads on rising clock, 
-bitmap row appears next cycle
-*/
-
+bitmap row appears next cycle */
 
 module char_rom (
     input logic clk,
@@ -44,6 +41,4 @@ module char_rom (
         .clock(clk),   
         .q(pixels)  //8bit output
     );
-    
 endmodule //char_rom
-
