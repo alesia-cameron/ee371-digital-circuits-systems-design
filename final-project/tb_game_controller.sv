@@ -6,13 +6,9 @@ Lab 6 - Red Light, Green Light
 Inputs: clk, reset, [3:0]LFSR_in
 Outputs: red, green
 
-Description: testbench for game_controller module simulates racing game scenarios to verify state machine logic
-
-*/
-
+Description: testbench for game_controller module simulates racing game scenarios to verify state machine logic */
 
 module tb_game_controller();
-    
     //control signals
     logic clk;
     logic reset;
@@ -180,4 +176,5 @@ module tb_game_controller();
         $stop;
     end
     
+
 endmodule
