@@ -57,7 +57,7 @@ module FIR_Filter_tb;
 		  
         @(posedge clk);  // Wait >_<
         expected = 10;  // 160*16/256 = 10
-		  //$display("After steady state with 160: dataOut=%d, expected=%d %s", 
+		//$display("After steady state with 160: dataOut=%d, expected=%d %s", 
         //dataOut, expected);
         
         // Add 3 320s
@@ -76,20 +76,20 @@ module FIR_Filter_tb;
             @(posedge clk);
         end
         @(posedge clk);  // Wait >_<
-        // Window: 10*160 + 3*320 + 3*480 = 1600 + 960 + 1440 = 4000
-        // So expected avg is 4000/256 = 15.625 ~ 15
+        //Window: 10*160 + 3*320 + 3*480 = 1600 + 960 + 1440 = 4000
+        //expected avg is 4000/256 = 15.625 ~ 15
         expected = 15;
-       //  $display("After adding 480s: dataOut=%d, expected=%d %s", 
-       //           dataOut, expected);
+       //$display("After adding 480s: dataOut=%d, expected=%d %s", 
+       //dataOut, expected);
         
-        // Add 3 samples of 640
+        //Add 3 samples of 640
         for (i = 0; i < 3; i = i + 1) begin
             dataIn = 640;
             @(posedge clk);
         end
         @(posedge clk);  // Wait >_<
-        // Window: 7*160 + 3*320 + 3*480 + 3*640 = 5440
-        // so expectd avg is 5440/256 = 21.25 ~ 21
+        //Window: 7*160 + 3*320 + 3*480 + 3*640 = 5440
+        //expectd avg is 5440/256 = 21.25 ~ 21
         expected = 21;
        //$display("After adding 640s: dataOut=%d, expected=%d %s", 
        //dataOut, expected);
@@ -97,5 +97,4 @@ module FIR_Filter_tb;
         #50;
         $stop;
     end
-    
 endmodule //FIR_Filter_tb
