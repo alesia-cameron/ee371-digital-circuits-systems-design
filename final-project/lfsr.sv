@@ -12,7 +12,6 @@ turns sequence into something that looks random. Ooutput is bits after
 they shift. Output fed into anything that needs randomness 
 */
 
-
 module lfsr (
     input logic clk,
     input logic reset,
@@ -28,13 +27,11 @@ module lfsr (
 endmodule 
 
 
-
 //====================Test Bench=============================
 module lfsr_tb; 
   logic clk;
   logic reset;
   logic [3:0] out;
-
 
   lfsr dut(
     .clk(clk),
@@ -47,7 +44,6 @@ module lfsr_tb;
     forever #5 clk = ~clk;   
   end
 
- 
   initial begin
     reset = 1;
     #20;           
@@ -63,6 +59,4 @@ module lfsr_tb;
   begin
     $display("Time=%0t  LFSR=%b", $time, out);
   end
-
 endmodule
-
