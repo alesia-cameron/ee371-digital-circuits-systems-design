@@ -24,12 +24,13 @@ it wraps back to zero for looping.
 
 Reset input resets address to the start 
 */
+
 module Task2_part2 (CLOCK_50, write_ready, reset, writedata_left, writedata_right);
 	input CLOCK_50;
 	input write_ready; 
-   input reset;             
-   output [23:0] writedata_left;  
-   output [23:0] writedata_right;  
+    input reset;             
+    output [23:0] writedata_left;  
+    output [23:0] writedata_right;  
 	
 ///////////Local logic list ///////////////////////////////////
 	reg [15:0] ROM_address; 
@@ -37,14 +38,12 @@ module Task2_part2 (CLOCK_50, write_ready, reset, writedata_left, writedata_righ
 	assign writedata_left = Tone_data; //pass from ROM
 	assign writedata_right = Tone_data;
 	
-	
 ////////Instantiation///////////////////////////////////////
 	Task2_ROM1Port Rom_Instantiation (
 		.address(ROM_address),
 		.clock(CLOCK_50),
 		.q(Tone_data)
 	);
-	
 	
 ////////sequential logic for reading MIF file, incrementing the ROM////////
 	always @(posedge CLOCK_50) //not always_ff bc .v not .sv
@@ -62,7 +61,4 @@ module Task2_part2 (CLOCK_50, write_ready, reset, writedata_left, writedata_righ
 			  end
 		 end
 	end
-
 endmodule
-
-
