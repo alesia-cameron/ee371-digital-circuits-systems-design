@@ -16,8 +16,8 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 
     //========= INSTANTIATE TOP MODULE =========
 	 lab2toplevel_Part3 top_inst (
-        .SW(SW),                     
-        .KEY(KEY),   
+          .SW(SW),                     
+          .KEY(KEY),   
 		  .CLOCK_50(CLOCK_50),        
 		  .HEX5(HEX5),
 		  .HEX4(HEX4),
@@ -27,3 +27,4 @@ module DE1_SoC (CLOCK_50, SW, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 		  .HEX0(HEX0)
     ); 
 endmodule  // DE1_SoC
+
