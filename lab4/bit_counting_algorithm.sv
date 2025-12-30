@@ -24,9 +24,8 @@ a result counter for each 1 encountered in the least significant bit,
 & S3 signals that counting is done. The module includes input 
 synchronization for the switches and keys to prevent metastability. 
 Instantiates a separate shift module and a 7-segment display module for
-output.
+output. */
 
-*/
 module bit_counting_algorithm (
 	 input  logic CLOCK_50,
     input  logic [7:0]  SW,        
@@ -102,7 +101,6 @@ module bit_counting_algorithm (
 		 else if (ps == S2)
 			  A <= {1'b0, A[7:1]}; //shift right manually here
     end
-
 
 	//datapath
 	 always_comb begin
