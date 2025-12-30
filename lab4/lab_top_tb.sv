@@ -10,11 +10,9 @@ pulses KEY3 to start counting. The bit counter display 4 on HEX0
 After letting it run for a short time it switches to Task 2 the binary search 
 by setting SW[9] to 1, sets the search value to 10, and pulses KEY3 to trigger 
 search. Simulation continues for enough clock cycles to observe outputs on 
-HEX display and LEDR
-*/
+HEX display and LEDR */
 
 `timescale 1ns/1ps
-
 module lab_top_tb;
 
     logic CLOCK_50;
@@ -67,5 +65,5 @@ module lab_top_tb;
 
         $stop;
     end
-
+	
 endmodule
