@@ -1,7 +1,6 @@
 //EE 371 Lab4
 //Nov 1, 2025
 
-
 /* 
 Combined Top Module chooses between two tasks
 SW9 = 0 bit counter algorithm Task 1
@@ -17,8 +16,8 @@ LEDR9: shows if computation of no. of 1's was done in task 1,
 HEX0: displays num of 1's in input number for task 1, 
 		displays ones place of address of found data for task 2, 7 bit output
 HEX1: displays tens place of address found in task 2, 
-		not used in task 1, 7 bit output
- */
+		not used in task 1, 7 bit output */
+
 module lab_top (
     input logic CLOCK_50,
     input  logic [3:0] KEY,
@@ -94,7 +93,6 @@ module lab_top (
             LEDR = ledr_task2;
         end
     end
-	 
     
     //turn off unused displays 
     assign HEX2 = 7'b1111111;
