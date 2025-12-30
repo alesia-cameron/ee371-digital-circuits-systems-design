@@ -3,13 +3,9 @@ EE/CSE 371
 Dec 5, 2025
 Lab 6 - Red Light, Green Light  
 
-Inputs: 
-clk
-char_code[7:0]  
-row[2:0]       
+Inputs: clk, char_code[7:0], row[2:0]       
 
-Outputs: 
-pixels[7:0] 
+Outputs: pixels[7:0] 
 
 Description: character ROM converts convenient char_code + row interface to ROM address
 Character ROM stores 8x8 pixel bitmap for rendering text. 
@@ -42,3 +38,4 @@ module char_rom (
         .q(pixels)  //8bit output
     );
 endmodule //char_rom
+
