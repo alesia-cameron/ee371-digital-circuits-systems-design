@@ -26,8 +26,7 @@ swaps coordinates so progression always moves along dominant axis. It also decid
 end points and initializes error term along with step used to move vertically. 
 Each clock tick outputs one pixel coordinate. The algorithm keeps running error
 nudging secondary axis when accumulated error rises above zero. Once the advancing coordinate reaches 
-end point, the module asserts done
-*/
+end point, the module asserts done */
  
 module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
     input logic clk, reset;
@@ -117,5 +116,4 @@ module line_drawer(clk, reset, x0, y0, x1, y1, x, y, done);
             end
         end
     end
-    
 endmodule  // line_drawer
