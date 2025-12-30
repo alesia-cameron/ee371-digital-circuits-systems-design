@@ -17,18 +17,17 @@ Connections:  Connects to module ram32x3 (named ‘instantiation’), which impl
 */
 
 `timescale 1 ps / 1 ps
-
 module task1 (
  	input	logic [4:0]  Address,
 	input	logic CLK,
 	input	logic [2:0]  DataIn,
 	input	logic  Write,
-	output logic [2:0]  DataOut
+	output  logic [2:0]  DataOut
 );
 
 //instantiate memory
 ram32x3 instantiation (
-      .address(Address[4:0]),
+        .address(Address[4:0]),
 		.clock(CLK),
 		.data(DataIn[2:0]),
 		.wren(Write),
@@ -63,39 +62,39 @@ module task1_tb();
 	
    initial begin
 	//Initialize vars
-		Write = 0;
+	  Write = 0;
       Address = 0;
       DataIn = 0;
 		  
-		@(posedge clk)
-		@(posedge clk)
+	  @(posedge clk)
+	  @(posedge clk)
 
       //Write data 3 to address 1
       @(posedge clk)
-		Address = 1;
+	  Address = 1;
       DataIn = 4;
       Write = 1;
-	   @(posedge clk)
+	  @(posedge clk)
       Write = 0;
 
       //Wait then read 
       @(posedge clk)
-	   Address = 1;
+	  Address = 1;
 
       //write val to different address
-		@(posedge clk)
+	  @(posedge clk)
       Address = 2;
       DataIn = 4;
       Write = 1;
-		@(posedge clk)
-		Write = 0;
+	  @(posedge clk)
+	  Write = 0;
 
       //read
-		@(posedge clk)
-		Address = 2;
-		
+	  @(posedge clk)
+	  Address = 2;
       $stop;
     end
 
 endmodule
 */
+
