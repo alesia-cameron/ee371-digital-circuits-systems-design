@@ -35,8 +35,7 @@ AUD_DACDAT);
 	wire [23:0] writedata_left_part2, writedata_right_part2;
 	
 	wire reset = ~KEY[0];//active low
-	
-  
+
 ///////////logic to choose between outputs of task 1 & task 2
 	reg [23:0] master_output_right; //output from DFF selecting, reg means they're regiters
 	reg [23:0] master_output_left;  //output from DFF selecting 
@@ -63,8 +62,7 @@ AUD_DACDAT);
             end
         end
     end
-   
-         
+       
 ///////////Instantiate both tasks//////////////////////
     Task2_part1 Task1_Instantiation (
         .CLOCK_50(CLOCK_50),
@@ -87,8 +85,6 @@ AUD_DACDAT);
         .writedata_left(writedata_left_part2),
         .writedata_right(writedata_right_part2)
     );
-
-	
 	
 /////////////////////////////////////////////////////////////////////////////////
 // Audio CODEC interface. 
@@ -147,11 +143,8 @@ endmodule //Task2_TopLevel
 
 
 
-
-
 ////////////////////////Task 2 Test Bench/////////////////////////////////////
 `timescale 1ns/1ps
-
 module Task2_TopLevel_tb;
 
     //inputs
@@ -192,7 +185,6 @@ module Task2_TopLevel_tb;
 	initial CLOCK2_50 = 0;
 	always #20 CLOCK2_50 = ~CLOCK2_50; //25MHz for codec XCK
 
-
     initial begin
         KEY = 1;  // reset inactive
         SW[9]  = 0; // start with task1
@@ -214,11 +206,6 @@ module Task2_TopLevel_tb;
 
         SW[9] = 1; // task2 again
         repeat (10) @(posedge CLOCK_50);
-
         $stop;
     end
 endmodule
-
-
-
-
