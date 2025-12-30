@@ -3,11 +3,9 @@ EE/CSE 371
 Dec 5, 2025
 Lab 6 - Red Light, Green Light  
 
-Inputs:
-clk, reset, game_active, rand_val, move_up, move_down, move_forward
+Inputs: clk, reset, game_active, rand_val, move_up, move_down, move_forward
 
-Outputs:
-player_x, player_y, ai1_x, ai1_y, ai2_x, ai2_y, ai3_x, ai3_y
+Outputs: player_x, player_y, ai1_x, ai1_y, ai2_x, ai2_y, ai3_x, ai3_y
 
 Description: Manages positions of four racing cars, tracks player car position based on 
 SW inputs and updates 3 AI opponent positions using random # generator. 
@@ -193,3 +191,4 @@ module car_manager (
     end
 
 endmodule 
+
