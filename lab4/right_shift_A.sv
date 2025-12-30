@@ -18,9 +18,7 @@ Result [7:0] 8-bit output representing either the loaded value or the right-shif
 Testbench loads two 8bit values into shift register
 then lets circuit shift them right over 
 several clock cycles to verify correct operation. 
-Uses50 MHz clock and toggles load signal to test loading and shift behavior
-
-*/
+Uses50 MHz clock and toggles load signal to test loading and shift behavior */
  
 /////////////////Right Shift A Module///////////////////////////
 module right_shift_A (
@@ -38,8 +36,7 @@ module right_shift_A (
 endmodule
 
 
-
-///////////////////////////////////////////////////////
+/////////////////////////Testbench//////////////////////////////
 module right_shift_A_tb;
 
   logic CLOCK_50;
@@ -87,7 +84,3 @@ module right_shift_A_tb;
   end
 
 endmodule
-
-
-
-
