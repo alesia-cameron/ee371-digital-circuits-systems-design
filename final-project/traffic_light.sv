@@ -13,10 +13,7 @@ Random value gets turned into duration 1-10. Timer reloads with that value.
 While timer counts down, light stays in current color. 
 The present state holds whichever color is active, next state decides 
 where to go when timer expires. Outputs reflect what the current state is. 
-Keeps trafic light changing in unpredictable intervals when countdown finishes
-
-*/
-
+Keeps trafic light changing in unpredictable intervals when countdown finishes */
 
 module traffic_light (
     input logic clk,
