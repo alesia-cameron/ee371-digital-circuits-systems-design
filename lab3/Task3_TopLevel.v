@@ -113,7 +113,6 @@ AUD_DACDAT);
         end
     end
    
-         
 ///////////Instantiate both tasks//////////////////////
     Task2_part1 Task1_Instantiation (
         .CLOCK_50(CLOCK_50),
@@ -137,7 +136,6 @@ AUD_DACDAT);
         .writedata_right(writedata_right_part2)
     );
 
-	 
 //////// Instantiate filters for Right and Left samples
 //need to instantiatte two for left and right values for each audio channel in top module
 //module fifo #(parameter DATA_WIDTH=8, ADDR_WIDTH=4)
@@ -209,8 +207,4 @@ FIR_Filter #(256, 24) right_filter (
 		.readdata_left(readdata_left_part1), .readdata_right(readdata_right_part1),
 		.AUD_DACDAT(AUD_DACDAT)
 	);  
-	
 endmodule //Task2_TopLevel
-
-
-
