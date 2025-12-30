@@ -1,16 +1,12 @@
-//EE 371 HMWK 3
-//Oct 18, 2025
-
-// Description: stores 16 bit words at each address and outputs  
-// MSB or LSB alternately on each read cycle
+// Description: stores 16 bit words at each address and outputs MSB or LSB alternately on each read cycle
 
 /* Register file module for specified data and address bus widths.
  * Asynchronous read port (r_addr -> r_data) and synchronous write
  * port (w_data -> w_addr if w_en).
  */
-module reg_file #(parameter DATA_WIDTH=8, ADDR_WIDTH=2)
-                (clk, w_data, w_en, w_addr, r_addr, r_data);
 
+module reg_file #(parameter DATA_WIDTH=8, ADDR_WIDTH=2)
+    (clk, w_data, w_en, w_addr, r_addr, r_data);
 	input  logic clk, w_en;
 	input  logic [ADDR_WIDTH-1:0] w_addr, r_addr;
 	input  logic [DATA_WIDTH-1:0] w_data;
@@ -26,5 +22,4 @@ module reg_file #(parameter DATA_WIDTH=8, ADDR_WIDTH=2)
 	
 	//read operation (asynchronous)
 	assign r_data = array_reg[r_addr];
-	
 endmodule //reg_file
