@@ -3,12 +3,10 @@ EE/CSE 371
 Dec 5, 2025
 Lab 6 - Red Light, Green Light  
 
-Inputs: 
-clk, reset, start_key, red_light, player_moved, 
+Inputs: clk, reset, start_key, red_light, player_moved, 
 player_x, ai1_x, ai2_x, ai3_x
 
-Outputs: 
-game_active, player_score, ai1_score, ai2_score, ai3_score, 
+Outputs: game_active, player_score, ai1_score, ai2_score, ai3_score, 
 round_num, show_final_scores, show_start_screen, player_lost, player_blink
 
 Description: Module runs main game logic, controls the flow through different 
@@ -281,3 +279,4 @@ module game_controller (
                           (((delay_counter / 27'd12_500_000) % 2) == 0);
     
 endmodule //end game_controller
+
