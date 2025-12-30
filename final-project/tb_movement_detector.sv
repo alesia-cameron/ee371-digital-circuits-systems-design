@@ -6,10 +6,7 @@ Lab 6 - Red Light, Green Light
 Inputs: clk, reset, [3:0]LFSR_in
 Outputs: red, green
 
-Description: testbench for movement_detector module verifies detection of position changes
-*/
-
-
+Description: testbench for movement_detector module verifies detection of position changes */
 
 module tb_movement_detector();
     
@@ -83,5 +80,4 @@ module tb_movement_detector();
         $display("all tests pass");
         $stop;
     end
-    
 endmodule
