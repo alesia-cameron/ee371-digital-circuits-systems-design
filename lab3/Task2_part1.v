@@ -22,26 +22,25 @@ writedata_left 24-bit audio output left channel
 writedata_right 24-bit audio output right channel 
 */
 
-
 //Top level for part 1 Task 2
 module Task2_part1 (CLOCK_50, reset, read_ready, write_ready, writedata_left, 
 writedata_right, readdata_left, readdata_right, read, write);
 
 /////////////////Port list /////////////////////
 	input CLOCK_50;
-   input reset;
-   input read_ready; //was local wire but now need for top module
-   input write_ready; //was local wire but now need for top module
-   input [23:0] readdata_left, readdata_right;
-   output [23:0] writedata_left, writedata_right;
+    input reset;
+    input read_ready; //was local wire but now need for top module
+    input write_ready; //was local wire but now need for top module
+    input [23:0] readdata_left, readdata_right;
+    output [23:0] writedata_left, writedata_right;
 	output read, write;
 	
 	assign writedata_left = readdata_left; //pass from mic to speaker
-			//(((read_ready)) & [23:0] writedata_left ) //wtf
 	assign writedata_right = readdata_right;
-	assign read = read_ready & write_ready;	//the data is only valid when the read_ready signal is asserted.
-	assign write = write_ready & read_ready; //both per thomas // both have to be ready bc youre doing in at same time
+	assign read = read_ready & write_ready;	//the data is only valid when the read_ready signal is asserted
+	assign write = write_ready & read_ready; 
 endmodule
+
 
 
 
