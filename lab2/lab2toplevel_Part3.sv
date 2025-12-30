@@ -60,7 +60,7 @@ module lab2toplevel_Part3(
     assign Write = SW_Stable[0];  // Write when key is pressed (active low)
     assign Task3True = SW_Stable[9];
     assign ReadAddress = Counter;
-	 assign Reset = ~KEY_Stable[3];
+	assign Reset = ~KEY_Stable[3];
 	 
 	 //clock divider that creates 1-sec pulse from 50 MHz clock
     logic [25:0] secondCount; //counter counts from 0 to 50M
@@ -111,6 +111,4 @@ module lab2toplevel_Part3(
 	Display (in hex) the read address on HEX3–HEX2 and the 3-bit word content on HEX0 */
 	seg7 seg7HEX3 (.hex({3'b000, ReadAddress[4]}), .leds(HEX3)); //correct
     seg7 seg7HEX2 (.hex(ReadAddress[3:0]), .leds(HEX2)); //correct
-endmodule //lab3toplevel
-
-
+endmodule 
