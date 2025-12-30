@@ -69,7 +69,6 @@ module game_controller (
     //round_delay, 100 million cycles at 50MHz = 2 seconds, gives players time to see who won before next round
     parameter round_delay = 27'd100_000_000;
     
-	 
     //reset_delay creates pause when cars return to start
     //2.5 million cycles equals 0.05 seconds prevents false finish line detection 
     parameter reset_delay = 27'd2_500_000;
@@ -78,7 +77,6 @@ module game_controller (
     //once high, no more finish line checks happen this round
     logic round_winner_recorded;
     
-	 
     //player_disqualified remembers if player moved during red light
     //once set high player cannot win current round even if crosses finish
     //reset to low at start of each new round
