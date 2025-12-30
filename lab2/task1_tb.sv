@@ -19,7 +19,7 @@ module task1_tb();
     logic [2:0] DataIn;
     logic Write;
     logic [2:0] DataOut;
-	 logic [2:0] DataOut2; //to differentiate multidimen array
+	logic [2:0] DataOut2; //to differentiate multidimen array
 
 	 task1 dut1 (
         .Address(Address),
@@ -61,7 +61,7 @@ module task1_tb();
 
       //Wait then read 
       @(posedge clk)
-	   Address = 1;
+	  Address = 1;
 		
 	  //try to rewrite with write being 0, new data 8 address still 1
 	  @(posedge clk)
@@ -82,9 +82,9 @@ module task1_tb();
 		
 	   @(posedge clk)
 	   @(posedge clk)
-		
       $stop;
     end
 
 endmodule
+
 
