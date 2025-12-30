@@ -25,8 +25,6 @@ The output data between the two modules (DataTask2Out or DataTask3Out)
 is selected using a MUX and displayed on a seven segment display. 
 */
 
-//vsim work.task1_tb -L altera_mf_ver -L lpm_ver -L work //to run on modlesim
-
 `timescale 1 ps / 1 ps
 module lab2toplevel_Part3(
     input logic [9:0] SW,        
@@ -110,9 +108,9 @@ module lab2toplevel_Part3(
 	seg7 seg7HEX0 (.hex({1'b0, DataSelected}), .leds(HEX0));
 	
 	/* Use a counter to cycle through read addresses
-	Display (in hex) the read address on HEX3–HEX2 and the 3-bit word content on HEX0.
-	*/
+	Display (in hex) the read address on HEX3–HEX2 and the 3-bit word content on HEX0 */
 	seg7 seg7HEX3 (.hex({3'b000, ReadAddress[4]}), .leds(HEX3)); //correct
-   seg7 seg7HEX2 (.hex(ReadAddress[3:0]), .leds(HEX2)); //correct
+    seg7 seg7HEX2 (.hex(ReadAddress[3:0]), .leds(HEX2)); //correct
 endmodule //lab3toplevel
+
 
