@@ -1,0 +1,58 @@
+-- Copyright (C) 2017  Intel Corporation. All rights reserved.
+-- Your use of Intel Corporation's design tools, logic functions
+-- and other software and tools, and its AMPP partner logic
+-- functions, and any output files from any of the foregoing
+-- (including device programming or simulation files), and any
+-- associated documentation or information are expressly subject
+-- to the terms and conditions of the Intel Program License
+-- Subscription Agreement, the Intel Quartus Prime License Agreement,
+-- the Intel MegaCore Function License Agreement, or other
+-- applicable license agreement, including, without limitation,
+-- that your use is for the sole purpose of programming logic
+-- devices manufactured by Intel and sold by Intel or its
+-- authorized distributors.  Please refer to the applicable
+-- agreement for further details.
+
+-- Quartus Prime generated Memory Initialization File (.mif)
+-- Sorted array for binary search: values 5, 10, 15, ..., 160
+
+WIDTH=8;
+DEPTH=32;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=UNS;
+
+CONTENT BEGIN
+	0   :   5;    -- Address 0
+	1   :   10;   -- Address 1
+	2   :   15;   -- Address 2
+	3   :   20;   -- Address 3
+	4   :   25;   -- Address 4
+	5   :   30;   -- Address 5
+	6   :   35;   -- Address 6
+	7   :   40;   -- Address 7
+	8   :   45;   -- Address 8
+	9   :   50;   -- Address 9
+	10  :   55;   -- Address 10
+	11  :   60;   -- Address 11
+	12  :   65;   -- Address 12
+	13  :   70;   -- Address 13
+	14  :   75;   -- Address 14
+	15  :   80;   -- Address 15
+	16  :   85;   -- Address 16
+	17  :   90;   -- Address 17
+	18  :   95;   -- Address 18
+	19  :   100;  -- Address 19
+	20  :   105;  -- Address 20
+	21  :   110;  -- Address 21
+	22  :   115;  -- Address 22
+	23  :   120;  -- Address 23
+	24  :   125;  -- Address 24
+	25  :   130;  -- Address 25
+	26  :   135;  -- Address 26
+	27  :   140;  -- Address 27
+	28  :   145;  -- Address 28
+	29  :   150;  -- Address 29
+	30  :   155;  -- Address 30
+	31  :   160;  -- Address 31
+END;
