@@ -1,5 +1,3 @@
-//Alesia Cameron 
-//ID 2050790
 //EE 371 Lab2
 //Oct 10, 2025
 
@@ -7,7 +5,6 @@
 Module interfaces with 32x3bit RAM for read & write operations  
 Connects signals to the internal RAM module
 
-Ports: 
 Input:
 Address [4:0] – 5-bit address input specifying the memory  
 CLK – Clock 
@@ -16,8 +13,7 @@ Write Control signal when 1, data is written to RAM when 0, data is read from RA
 Output:
 DataOut [2:0] 3-bit output data read from RAM  
 
-Connections:  
-Connects to module ram32x3 (named ‘instantiation’), which implements the actual memory storage.  
+Connections:  Connects to module ram32x3 (named ‘instantiation’), which implements the actual memory storage.  
 */
 
 `timescale 1 ps / 1 ps
@@ -31,7 +27,6 @@ module task1 (
 );
 
 //instantiate memory
-
 ram32x3 instantiation (
       .address(Address[4:0]),
 		.clock(CLK),
@@ -40,8 +35,6 @@ ram32x3 instantiation (
 		.q(DataOut[2:0])
     );
 endmodule //task1
-
-
 
 
 //=====================Test Bench=======================
@@ -68,7 +61,6 @@ module task1_tb();
 		forever #(CLOCK_PERIOD/2) clk <= ~clk;
 	end
 	
-
    initial begin
 	//Initialize vars
 		Write = 0;
